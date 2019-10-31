@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>halloween</title> 
+    <link href="icono.png" rel="icon"> 
+
+    <style>
+         body {background-color:rgb(15, 14, 14);}
+         #wrapper {position:relative;
+                   background-image: url("imagenes/fondohalloween.jpg");
+                   background-repeat:no-repeat;
+                   width:1920px;
+                   height:1080px;
+                   margin: auto;}
+         h3 {position:absolute;
+           top:-10px;
+           left:650px;
+           font-family: 'Butcherman', cursive;
+           font-size:1em;
+           color:rgb(224, 175, 152);
+           text-shadow:black 1px 1px,
+           black -1px -1px,
+           black 1px -1px,
+           black -1px 1px;}
+        #p1 {position:absolute;
+           top:400px;
+           left:1200px;
+           font-family: 'Butcherman', cursive;
+           font-size:1.5em;
+           color:orange;
+           text-shadow:black 2px 2px,
+           black -2px -2px,
+           black 2px -2px,
+           black -2px 2px;}
+        #p2 {position:absolute;
+           top:600px;
+           left:1650px;
+           font-family: 'Butcherman', cursive;
+           font-size:1em;
+           color:orange;
+           text-shadow:black 2px 2px,
+           black -2px -2px,
+           black 2px -2px,
+           black -2px 2px;}
+         #buho {position:absolute;
+            width: 100px;
+            height: 100px;
+            top: 330px;
+            left: 1170px;
+             }
+         #lapida {position:absolute;
+            width: 250px;
+            height: 250px;
+            top: 650px;
+            left: 1630px;
+
+            
+             }
+         #fantigordi {position: absolute;
+
+            width: 50px;
+            height: 50px;
+            background-image: url("imagenes/fantigordi.png");
+            background-size: cover;
+            transition: 1s;
+            transition-delay: 0.5s;
+         }
+         #gifzombie {position: absolute;
+
+            top: 780px;
+            left: 1700px;
+            width: 80px;
+            height: 120px;
+            background-image: url("imagenes/gifzombie.gif");
+            background-size: cover;
+            visibility: hidden; 
+         }
+
+
+
+
+    </style>
+<script>
+    document.addEventListener("click" ,function(event){
+        fantigordi=document.getElementById("fantigordi");
+        fantigordi.style.left=(event.clientX)+"px";
+        fantigordi.style.top=(event.clientY)+"px";
+    })
+
+    function sonar(elemento) {
+ var audio = document.getElementById(elemento);
+ audio.play();
+ }
+ function pausar(elemento) {
+ var audio = document.getElementById(elemento);
+ audio.pause();
+ }
+
+ function mostrar(elemento) {
+ el=document.getElementById (elemento);
+ el.style.visibility="visible";
+ }
+function ocultar(elemento) {
+ el=document.getElementById (elemento);
+ el.style.visibility="hidden";
+ }
+
+ 
+
+
+</script>
+
+
+
+</head>
+<body>
+    <div id="wrapper">
+      
+        <div onmouseover="sonar('buho')" id="buho"></div>
+        <div id="fantigordi"></div>
+        <div id="lapida"></div>
+        <div id="buho"></div>
+        <div id="gifzombie"></div>
+
+
+       <div id="lapida" onclick="mostrar('gifzombie');sonar('silbido')"></div>
+       <div id="buho" onclick="sonar('sonarbuho')"></div>
+
+    </div>
+    <h3>No te fies del fantasma gordo creo que quiere comerse tu puntero
+    </h3>
+    <p id="p1">no molestes al búho</p>
+    <p id="p2">don't disturb the zombie (it's bugged)</p>
+    
+    <audio id="silbido">
+        <source src="sonido/silbido.mp3" type="audio/mpeg"></audio>
+    <audio id="sonarbuho">
+        <source src="sonido/buho.mp3" type="audio/mpeg"></audio>
+   
+            <link href="icono.ico" rel="icon">
+            
+
+
+</body>  
+
+
+
+
+
+
+
+
+
+</html>
